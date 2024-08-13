@@ -12,8 +12,6 @@ const Home = () => {
   const handleKey = (index, event) => {
     if (event.key === 'Enter' && inputs[index]) {
       setInputs([...inputs, inputs[index]]); //Agrega un nuevo input con el valor del input actual
-	  if (index === 0) {
-      }
     }
   };
 
