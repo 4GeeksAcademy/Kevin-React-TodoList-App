@@ -16,7 +16,7 @@ const Home = () => {
   };
 
   const handleRemove = (index) => {
-	//cada input será no editable
+    //cada input será no editable
     const newInputs = inputs.filter((_, i) => i !== index);
     setInputs(newInputs);
   };
@@ -24,14 +24,14 @@ const Home = () => {
   return (
     <div className="text-center">
       <label for="input">
-	  <h1 className="display-3" style={{ fontFamily: "'roboto'",  color: "black"}}>Todos</h1>
-	 </label>
+        <h1 className="display-3" style={{ fontFamily: "'roboto'", color: "black" }}>Todos</h1>
+      </label>
       {inputs.map((input, index) => (
-        <div key={index} 
-		style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}> 
+        <div className="container-fluid" key={index}
+          style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}>
           <input
-		  	id="input" 
-		  	placeholder="!Ingresa algo!"
+            id="input"
+            placeholder="!Ingresa algo!"
             type="text"
             value={input}
             onChange={e => handleInput(index, e)}
@@ -40,9 +40,10 @@ const Home = () => {
             readOnly={index !== 0} //Solo el primer input es editable
           />
           {index !== 0 && (
+            <a>
             <button onClick={() => handleRemove(index)} style={{ cursor: 'pointer' }}>
               X
-            </button>
+            </button></a>
           )}
         </div>
       ))}
